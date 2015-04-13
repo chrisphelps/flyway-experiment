@@ -20,7 +20,7 @@
     <jdbc.port>5432</jdbc.port>
     <jdbc.user>postgres</jdbc.user>
     <jdbc.password>super</jdbc.password>
-    <sjdbc.database>test_${timestamp}</sjdbc.database>
+    <jdbc.database>test_${timestamp}</jdbc.database>
     <jdbc.url>jdbc:postgresql://${jdbc.host}:${jdbc.port}/${jdbc.database}</jdbc.url>
 
 
@@ -71,7 +71,8 @@
         <configuration>
           <driver>org.postgresql.Driver</driver>
           <url>${dbBootstrap.url}</url>
-          <username>postgres</username>
+          <username>${jdbc.user}</username>
+          <password>${jdbc.password}</password>
           <!--all executions are ignored if -DskipTests=true-->
           <skip>${skipTests}</skip>
         </configuration>

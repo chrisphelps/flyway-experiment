@@ -11,7 +11,7 @@ $ mvn clean install
 
 This will result in the build hanging while trying to apply the CREATE INDEX CONCURRENTLY.
 
-You can then log into postgres (using psql) and see the hung command:
+You can then log into postgres (using psql) and see the hung command (note waiting value):
 ```
 test_2015_04_13_110536=# select * from pg_stat_activity;
  datid |        datname         |  pid  | usesysid | usename  | application_name | client_addr | client_hostname | client_port |         backend_start         |          xact_start           |          query_start          |         state_change          | waiting |        state        |                                                                                                   query
